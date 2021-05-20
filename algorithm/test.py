@@ -12,7 +12,6 @@ def canBeSplitted(array):
         if index > 0:
             left_slice = array[:index]
             right_slice = array[index:]
-            # print(f'Left slice: {left_slice} ------ Right slice: {right_slice}')
             if sum(left_slice) == sum(right_slice):
                 return 1
 
