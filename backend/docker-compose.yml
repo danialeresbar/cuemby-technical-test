@@ -1,0 +1,28 @@
+version: '3.1'
+
+services:
+  web:
+    build: .
+    image: fut21:latest
+    container_name: fut21-web
+    environment:
+      ENVIRONMENT: development
+    depends_on:
+      - db
+    volumes:
+      - ./main:/home/cuembyadm/app/main
+      - ./cuemby:/home/cuembyadm/app/cuemby
+      - ./scripts:/home/cuembyadm/app/scripts
+
+    # Dev user: admin pass: admin
+    command: ["./scripts/wait-for-it.sh", "db:5432", "--", "./scripts/command-dev.sh"]
+    ports:
+      - "8000:8000"
+
+  db:
+    image: postgres:12-alpine
+    container_name: fut21-database
+    environment:
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "50000:5432"

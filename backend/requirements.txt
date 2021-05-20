@@ -1,0 +1,19 @@
+# Last update: Add Pillow dependencie
+
+# For autoconfig database using DATABASE_URL env variable
+dj_database_url
+
+# Python WEB framework
+django==3.2
+
+# A configurable set of panels that display various debug information about the current request/response
+django-debug-toolbar==3.2.1
+
+# Allows in-browser requests to your Django application from other origins
+django-cors-headers == 3.7.0
+
+# REST Framework
+djangorestframework==3.12.4
+
+# PostgreSQL python client
+psycopg2-binary==2.8.5
