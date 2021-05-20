@@ -1,4 +1,4 @@
-# Last update: Add Pillow dependencie
+# Last update: Add request dependencies
 
 # For autoconfig database using DATABASE_URL env variable
 dj_database_url
@@ -17,3 +17,6 @@ djangorestframework==3.12.4
 
 # PostgreSQL python client
 psycopg2-binary==2.8.5
+
+# Simple, yet elegant HTTP library
+requests==2.25.1
