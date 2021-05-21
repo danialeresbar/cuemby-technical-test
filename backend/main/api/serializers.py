@@ -3,13 +3,14 @@ from main.models import Player, Team
 
 
 class PlayerSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Player
-        exclude = ('id', )
+        exclude = ('id', 'team')
 
 
 class TeamSerializer(serializers.ModelSerializer):
-    players = serializers.StringRelatedField(many=True)
+    players = PlayerSerializer(many=True, read_only=True)
 
     class Meta:
         model = Team
