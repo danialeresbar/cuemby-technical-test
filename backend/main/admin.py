@@ -7,15 +7,15 @@ from .models import Player, Team
 class PlayerAdmin(admin.ModelAdmin):
     fieldsets = (
         ('Player', {
-            'fields': (('name', 'last_name'), 'nationality')
+            'fields': (('name', 'nationality'),)
         }),
         ('Club', {
             'fields': ('team', 'position')
         })
     )
 
-    list_display = ('id', 'name', 'last_name', 'nationality', 'team', 'position')
-    list_editable = ('name', 'last_name', 'nationality', 'team', 'position')
+    list_display = ('id', 'name', 'nation', 'team', 'position')
+    list_editable = ('name', 'nation', 'team', 'position')
     list_filter = ('team', 'position')
     search_fields = ('name',)
 
