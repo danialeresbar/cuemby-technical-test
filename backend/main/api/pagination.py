@@ -32,7 +32,7 @@ class CustomPagination(pagination.PageNumberPagination):
     def get_paginated_response(self, data):
         return response.Response({
             'Page': self.page.number,
-            'totalPages': None,
+            'totalPages': self.page.paginator.num_pages,
             'Items': len(data),
             'totalItems': self.page.paginator.count,
             'results': data
