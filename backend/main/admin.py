@@ -14,9 +14,10 @@ class PlayerAdmin(admin.ModelAdmin):
         })
     )
 
-    list_display = ('id', 'name', 'last_name', 'nationality', 'team')
-    list_editable = ('name', 'last_name', 'nationality', 'team')
-    list_filter = ('name', 'last_name', 'team')
+    list_display = ('id', 'name', 'last_name', 'nationality', 'team', 'position')
+    list_editable = ('name', 'last_name', 'nationality', 'team', 'position')
+    list_filter = ('team', 'position')
+    search_fields = ('name',)
 
 
 @admin.register(Team)
