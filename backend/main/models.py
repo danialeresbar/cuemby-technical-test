@@ -18,7 +18,7 @@ class Team(models.Model):
 
     """
 
-    name = models.CharField(max_length=128, verbose_name=TEAM_NAME)
+    name = models.CharField(max_length=128, unique=True, verbose_name=TEAM_NAME)
 
     class Meta:
         verbose_name = TEAM_VERBOSE_NAME
