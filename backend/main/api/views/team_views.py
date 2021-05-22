@@ -1,7 +1,7 @@
 from rest_framework import generics, response, views
-from main.api.serializers import PlayerSerializer, Team, TeamSerializer
 from main.api.pagination import PaginationHandlerMixin, CustomPagination
 from main.api.permissions import CustomPermission
+from main.api.serializers import PlayerSerializer, Team, TeamSerializer
 
 
 class TeamView(views.APIView, PaginationHandlerMixin):
@@ -18,5 +18,5 @@ class TeamView(views.APIView, PaginationHandlerMixin):
             serializer = self.get_paginated_response(PlayerSerializer(page, many=True).data)
         else:
             serializer = PlayerSerializer(page)
-        data =serializer.data
+        data = serializer.data
         return response.Response(data)
