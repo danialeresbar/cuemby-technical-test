@@ -1,4 +1,4 @@
-# Last update: Add request dependencies
+# Last update: Add request dependence
 
 # For autoconfig database using DATABASE_URL env variable
 dj_database_url
@@ -14,6 +14,9 @@ django-cors-headers == 3.7.0
 
 # REST Framework
 djangorestframework==3.12.4
+
+# API key permissions for the Django REST Framework
+djangorestframework-api-key==2.0.0
 
 # PostgreSQL python client
 psycopg2-binary==2.8.5
