@@ -14,11 +14,11 @@ class PaginationHandlerMixin:
             pass
         return self._paginator
 
-    def paginate_queryset(self, queryset):
+    def paginate_queryset(self, queryset, request, view=None):
 
         if self.paginator is None:
             return None
-        return self.paginator.paginate_queryset(queryset, self.request, view=self)
+        return self.paginator.paginate_queryset(queryset, request, view=self)
 
     def get_paginated_response(self, data):
         assert self.paginator is not None
@@ -27,7 +27,13 @@ class PaginationHandlerMixin:
 
 class CustomPagination(pagination.PageNumberPagination):
     page_size = 10
-    page_query_param = 'page'
+    page_query_param = 'Page'
+
+    def get_page_number(self, request, paginator):
+        page_number = request.data.get(self.page_query_param, 1)
+        if page_number in self.last_page_strings:
+            page_number = paginator.num_pages
+        return page_number
 
     def get_paginated_response(self, data):
         return response.Response({
