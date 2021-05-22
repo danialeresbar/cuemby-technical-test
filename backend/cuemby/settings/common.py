@@ -90,17 +90,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_FRAMEWORK = {
-    # 'DEFAULT_FILTER_BACKENDS': (
-    #     'django_filters.rest_framework.DjangoFilterBackend'
-    # ),
-    'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework.authentication.SessionAuthentication',
-    ),
     'DEFAULT_PERMISSION_CLASSES': (
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
     )
 }
 
+API_KEY_HEADER = 'X_API_KEY'
+API_KEY = os.environ.get('X_API_KEY', '')
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
