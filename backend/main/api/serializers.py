@@ -3,6 +3,9 @@ from main.models import Player, Team
 
 
 class PlayerSerializer(serializers.ModelSerializer):
+    """
+    Player model serializer
+    """
 
     class Meta:
         model = Player
@@ -10,6 +13,10 @@ class PlayerSerializer(serializers.ModelSerializer):
 
 
 class TeamSerializer(serializers.ModelSerializer):
+    """
+    Team model serializer
+    """
+
     players = PlayerSerializer(many=True, read_only=True)
 
     class Meta:
