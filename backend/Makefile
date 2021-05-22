@@ -14,4 +14,4 @@ showmigrations:
 	docker exec -it fut21-web ./manage.py showmigrations
 
 populate:
-	docker exec -it fut21-web python scripts/populate_database.py
+	docker exec -it fut21-web ./manage.py populate_database
