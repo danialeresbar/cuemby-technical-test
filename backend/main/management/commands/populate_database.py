@@ -40,8 +40,8 @@ class Command(BaseCommand):
 
                 teams.append(team)
 
-                if page > response.get('totalPages'):
-                    break
+            if page > response.get('totalPages'):
+                break
         print('Fetch finished')
 
         teams_filtered = [{'name': team} for team in set(teams)]
