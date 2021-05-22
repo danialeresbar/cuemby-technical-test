@@ -2,5 +2,5 @@
 .DS_Store
 .idea/
 .env/
-src/media/
+backend/media/
 db.sqlite3
