@@ -23,8 +23,9 @@ class Command(BaseCommand):
 
             try:
                 response = requests.get(url).json()
-            except:
+            except Exception as e:
                 print(f'Data for page {page} cannot be fetched')
+                print(f'Error: {e}')
                 break
 
             for player in response.get('items', list()):
@@ -71,4 +72,3 @@ class Command(BaseCommand):
         players, teams = self.get_data()
         self.save_teams(teams)
         self.save_players(players)
-
