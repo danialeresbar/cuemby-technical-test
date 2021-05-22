@@ -7,6 +7,7 @@ services:
     container_name: fut21-web
     environment:
       ENVIRONMENT: development
+      X_API_KEY: MYAPIKEY
     depends_on:
       - db
     volumes:
