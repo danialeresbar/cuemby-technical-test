@@ -3,7 +3,7 @@ from rest_framework import filters
 
 class NameFilterBackend(filters.BaseFilterBackend):
     """
-
+    Filter subclass for name filtering
     """
 
     def filter_queryset(self, request, queryset, view):
@@ -14,7 +14,7 @@ class NameFilterBackend(filters.BaseFilterBackend):
 
 class OrderFilterBackend(filters.BaseFilterBackend):
     """
-
+    Filter subclass to sort name (asc or desc)
     """
 
     def filter_queryset(self, request, queryset, view):

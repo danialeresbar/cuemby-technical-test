@@ -17,7 +17,7 @@ PLAYER_VERBOSE_NAME_PLURAL = 'Players'
 
 class Team(models.Model):
     """
-
+    Team model class
     """
 
     name = models.CharField(max_length=128, unique=True, verbose_name=TEAM_NAME)
@@ -32,7 +32,7 @@ class Team(models.Model):
 
 class Player(models.Model):
     """
-
+    Player model class
     """
 
     name = models.CharField(max_length=64, verbose_name=PLAYER_NAME)
