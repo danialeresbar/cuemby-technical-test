@@ -26,6 +26,10 @@ class PaginationHandlerMixin:
 
 
 class CustomPagination(pagination.PageNumberPagination):
+    """
+    Pagination subclass for custom GET and POST request pagination
+    """
+
     page_size = 10
     page_query_param = 'Page'
 
