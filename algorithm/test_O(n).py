@@ -13,7 +13,6 @@ def canBeSplitted(array):
             left_slice = array[:index]
             right_slice = array[index:]
             if sum(left_slice) == sum(right_slice):
-                print(f'{index} iterations for {len(array)} items')
                 return 1
 
     return -1
