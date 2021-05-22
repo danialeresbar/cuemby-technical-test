@@ -3,7 +3,7 @@ from main.api.filters import NameFilterBackend, OrderFilterBackend
 from main.api.serializers import PlayerSerializer
 from main.api.pagination import CustomPagination
 
-from backend.main.api.permissions import CustomPermission
+from main.api.permissions import CustomPermission
 
 
 class PlayerListView(generics.ListAPIView):
