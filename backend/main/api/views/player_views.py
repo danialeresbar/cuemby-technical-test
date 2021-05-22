@@ -1,8 +1,9 @@
-from rest_framework import generics, response, status
+from rest_framework import generics
 from main.api.filters import NameFilterBackend, OrderFilterBackend
 from main.api.serializers import PlayerSerializer
 from main.api.pagination import CustomPagination
-from main.api.throttles import CustomThrottle
+
+from backend.main.api.permissions import CustomPermission
 
 
 class PlayerListView(generics.ListAPIView):
@@ -10,3 +11,4 @@ class PlayerListView(generics.ListAPIView):
     serializer_class = PlayerSerializer
     queryset = serializer_class.Meta.model.objects.all().order_by('name')
     filter_backends = (NameFilterBackend, OrderFilterBackend)
+    permission_classes = (CustomPermission,)
