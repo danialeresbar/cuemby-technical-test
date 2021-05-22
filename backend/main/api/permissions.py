@@ -3,6 +3,10 @@ from rest_framework import exceptions, permissions, status
 
 
 class CustomPermission(permissions.BasePermission):
+    """
+    Permission subclass for custom request header validation
+    """
+
     _missing_header_message = 'x-api-key header is missing'
     _invalid_header_message = 'x-api-key header is invalid'
 
