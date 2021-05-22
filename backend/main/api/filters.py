@@ -19,7 +19,7 @@ class OrderFilterBackend(filters.BaseFilterBackend):
 
     def filter_queryset(self, request, queryset, view):
         order = request.query_params.get('order', 'asc')
-        if order == 'dsc':
+        if order == 'desc':
             filter_queryset = queryset.order_by('-name')
             return filter_queryset
 
