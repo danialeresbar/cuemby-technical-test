@@ -27,6 +27,7 @@ DEVELOPMENT_APPS = [
     'debug_toolbar',
     'corsheaders'
 ]
+
 INSTALLED_APPS += DEVELOPMENT_APPS
 
 DEVELOPMENT_MIDDLEWARE = [
