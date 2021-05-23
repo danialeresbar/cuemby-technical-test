@@ -4,7 +4,8 @@ from .partials.util import get_secret
 
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 DEBUG = False
-ALLOWED_HOSTS = ['cato-cms.herokuapp.com', '127.0.0.1']
+# Here you should put the URL of your site for the application
+ALLOWED_HOSTS = ['127.0.0.1']
 SECRET_KEY = get_secret('DJANGO_SECRET_KEY')
 
 
